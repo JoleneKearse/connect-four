@@ -62,6 +62,10 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -129,7 +133,8 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
+  border: 4px solid var(--clr-brand-dark);
+  box-shadow: 0 8px 4px var(--clr-brand-dark);
 }
 button:focus,
 button:focus-visible {
@@ -137,9 +142,6 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .home-menu-container {
-    padding-top: 108px;
-  }
   button {
     width: 334px;
   }
