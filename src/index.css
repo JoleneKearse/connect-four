@@ -1,6 +1,6 @@
 @font-face {
   font-family: "CustomVariableFont";
-  src: url("/public/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("woff2");
+  src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("woff2");
   font-weight: 100 900; /* Define the weight range if applicable */
   font-style: normal;
 }
@@ -52,31 +52,82 @@ p {
   color: var(--clr-black);
 }
 
+a,
+button {
+  font: inherit;
+}
+
+html {
+  background-color: var(--clr-brand-light);
+}
+
 body {
   margin: 0;
   padding: 0;
   font-size: 16px;
   min-width: 375px;
-  min-height: 100vh;
+  height: 100vh;
   background-color: var(--clr-brand-light);
+  text-transform: uppercase;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* LAYOUT */
+
+.home-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 435px;
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* UTILITY CLASSES */
+
+.yellow {
+  background-color: var(--clr-accent-yellow);
+}
+.pink {
+  background-color: var(--clr-accent-pink);
+}
+.white {
+  background-color: var(--clr-white);
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* COMPONENTS */
+
+.home-logo {
+  margin-bottom: 3rem;
+  width: 52px;
+  height: 52px;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  position: relative;
+  width: 396px;
+  border-radius: 0.75rem;
+  border: 4px solid var(--clr-black);
+  padding: 0.6em;
+  text-transform: uppercase;
+  color: var(--clr-black);
+  font-size: var(--heading-md);
+  font-weight: 800;
+  box-shadow: 0 8px 4px var(--clr-black);
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
@@ -85,15 +136,11 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
+@media (max-width: 768px) {
+  .home-menu-container {
+    padding-top: 108px;
   }
   button {
-    background-color: #f9f9f9;
+    width: 334px;
   }
 }
