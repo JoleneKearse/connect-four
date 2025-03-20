@@ -1,8 +1,15 @@
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import GamePage from "./pages/GamePage";
+import RulesPage from "./pages/RulesPage";
+
 function App() {
   return (
-    <>
-      <h1>Connect Four</h1>
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/play" element={<GamePage />} />
+      <Route path="/rules" element={<RulesPage />} />
+    </Routes>
   );
 }
 
