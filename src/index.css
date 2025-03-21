@@ -46,7 +46,8 @@ h2,
 h3,
 h4,
 h5,
-p {
+p,
+ol {
   margin: 0;
   padding: 0;
   color: var(--clr-black);
@@ -89,6 +90,50 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.rules-container {
+  width: 480px;
+  padding: 1rem 3rem;
+  border-radius: 0.75rem;
+  border: 4px solid var(--clr-black);
+  box-shadow: 0 8px 4px var(--clr-black);
+  background-color: var(--clr-white);
+}
+
+/* TYPOGRAPHY */
+.rules-heading {
+  font-size: var(--heading-lg);
+  text-align: center;
+}
+
+.rules-subheading {
+  font-size: var(--heading-sm);
+  color: var(--clr-brand-dark);
+}
+
+p .rules-text {
+  font-size: var(--heading-sm);
+  font-weight: 400;
+  color: var(--clr-black);
+  padding-block: 0.5rem;
+  line-height: 1.5;
+}
+
+.rules-list {
+  list-style: none;
+  counter-reset: list-counter;
+  list-style-position: inside;
+}
+
+.rules-list li {
+  counter-increment: list-counter;
+  padding-top: 0.5rem;
+}
+
+.rules-list li::before {
+  content: counter(list-counter) " ";
+  font-weight: 800;
 }
 
 /* UTILITY CLASSES */
