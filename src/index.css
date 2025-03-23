@@ -1,8 +1,14 @@
 @font-face {
   font-family: "CustomVariableFont";
   src: url("/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("woff2");
-  font-weight: 100 900; /* Define the weight range if applicable */
+  font-weight: 100 900;
   font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 :root {
@@ -16,7 +22,7 @@
   --heading-lg: clamp(3.5rem, 2vw + 1rem, 4.438rem);
   --heading-md: clamp(1.5rem, 2vw + 1rem, 1.938rem);
   --heading-sm: clamp(1.25rem, 2vw + 1rem, 1.625rem);
-  --heading-xs: clamp(1.25rem, 2vw + 1rem, 1.625rem);
+  --heading-xs: clamp(1rem, 2vw + 1rem, 1.313rem);
 
   font-family: "CustomVariableFont", sans-serif;
   font-variation-settings: "wght" 400 800;
@@ -67,10 +73,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-grow: 0;
   margin: 0;
   padding: 0;
   font-size: 16px;
-  min-width: 375px;
+  min-width: 100%;
   height: 100vh;
   background-color: var(--clr-brand-light);
   text-transform: uppercase;
@@ -93,12 +100,21 @@ body {
 }
 
 .rules-container {
-  width: 480px;
-  padding: 1rem 3rem;
+  width: 60vw;
+  max-width: 480px !important;
+  padding: 3rem 1.2rem;
   border-radius: 0.75rem;
   border: 4px solid var(--clr-black);
   box-shadow: 0 8px 4px var(--clr-black);
   background-color: var(--clr-white);
+}
+
+.game-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 335px;
 }
 
 /* TYPOGRAPHY */
@@ -108,6 +124,7 @@ body {
 }
 
 .rules-subheading {
+  padding-block: 1rem;
   font-size: var(--heading-sm);
   color: var(--clr-brand-dark);
 }
@@ -154,6 +171,12 @@ p .rules-text {
   align-items: center;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* COMPONENTS */
 
 .home-logo {
@@ -186,8 +209,32 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.mini-button {
+  width: 108px;
+  padding: 0.2rem 0.6rem;
+  background-color: var(--clr-brand-dark);
+  font-size: var(--heading-xs);
+  color: var(--clr-white);
+  border: none;
+  border-radius: 100px;
+  box-shadow: none;
+}
+.mini-button:hover {
+  background-color: var(--clr-accent-pink);
+  border: none;
+  box-shadow: none;
+}
+
 @media (max-width: 768px) {
   button {
     width: 334px;
+  }
+  .game-nav {
+    width: 635px;
+  }
+  .rules-container {
+    margin-block: 1rem;
+    width: 90vw;
+    max-width: 335px !important;
   }
 }

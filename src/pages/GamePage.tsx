@@ -1,7 +1,9 @@
+import GameControls from "../components/GameControls";
+
 const GamePage = () => {
   return (
     <main>
-      <h1>Game Page</h1>
+      <GameControls />
     </main>
   );
 };
